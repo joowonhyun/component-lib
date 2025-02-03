@@ -1,23 +1,30 @@
-"use client";
-
-import { Stack } from "@/components/Stack/Stack";
 import React from "react";
+import { Flex, Text } from "@/components";
 
 const page = () => {
   return (
-    <div>
-      <Stack
-        margin={{ top: 10, right: 20, bottom: 15, left: 5 }} // 객체 형태로 전달
-        padding={{ top: 5, right: 10 }} // 객체 형태로 전달
-        backgroundColor="white"
-        borderRadius={8}
-        onClick={() => console.log("Clicked!")}
+    <>
+      {/* 반응형이 필요하지 않을 때 */}
+      <Flex direction="row" gap="s4">
+        <Text color="gray-900" weight="w500" text="Hello World!" />
+        <Text color="blue-200" weight="w500" text="Hello World!" />
+      </Flex>
+
+      {/* 반응형이 필요할때 */}
+      <Flex
+        direction={{
+          mobile: "column",
+          tablet: "row",
+        }}
+        gap={{
+          mobile: "s4",
+          desktop: "s8",
+        }}
       >
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-      </Stack>
-    </div>
+        <Text color="gray-900" weight="w500" text="Hello World!" />
+        <Text color="blue-200" weight="w500" text="Hello World!" />
+      </Flex>
+    </>
   );
 };
 
