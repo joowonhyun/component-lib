@@ -1,30 +1,35 @@
 import React from "react";
-import { Flex, Text } from "@/components";
+import { Flex, Text, Box } from "@/components";
 
 const page = () => {
   return (
-    <>
+    <Box
+      maxWidth="full"
+      margin="auto"
+      borderColor="black"
+      border="solid"
+      paddingX={4}
+      paddingY={4}
+      borderRadius="radius12"
+    >
       {/* 반응형이 필요하지 않을 때 */}
-      <Flex direction="row" gap="s4">
-        <Text color="gray-900" weight="w500" text="Hello World!" />
-        <Text color="blue-200" weight="w500" text="Hello World!" />
+      <Flex flexDirection="row" gap={4}>
+        <Text color="gray-900" weight={500} text="Hello World!" />
+        <Text color="blue-200" weight={500} text="Hello World!" />
       </Flex>
 
       {/* 반응형이 필요할때 */}
       <Flex
-        direction={{
-          mobile: "column",
-          tablet: "row",
+        flexDirection={{
+          mobile: "row",
+          desktop: "column",
         }}
-        gap={{
-          mobile: "s4",
-          desktop: "s8",
-        }}
+        gap={4}
       >
-        <Text color="gray-900" weight="w500" text="Hello World!" />
-        <Text color="blue-200" weight="w500" text="Hello World!" />
+        <Text color="gray-900" weight={500} text="Hello World!" />
+        <Text color="blue-200" weight={500} text="Hello World!" />
       </Flex>
-    </>
+    </Box>
   );
 };
 

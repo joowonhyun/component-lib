@@ -2,8 +2,8 @@
 
 import React from "react";
 import { sprinkles } from "@/components/_core/sprinkles.css";
-import colors from "@/components/_core/palate";
-import { fontSize, fontWeight } from "@/components/_core/typo";
+import { colors } from "@/styles/palate";
+import { fontSize, fontWeight } from "@/styles/typo";
 
 interface TextProps {
   text: string;

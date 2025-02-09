@@ -1,17 +1,14 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import colors from "./palate";
-import { fontSize, fontWeight } from "./typo";
-import space from "./space";
+import { colors, space, fontSize, fontWeight, borderRadius } from "@/styles";
 
 const responsiveProperties = defineProperties({
   conditions: {
     mobile: {},
-    tablet: { "@media": "screen and (min-width: 768px)" },
-    desktop: { "@media": "screen and (min-width: 1024px)" },
+    desktop: { "@media": "screen and (min-width: 1040px)" },
   },
   defaultCondition: "mobile",
   properties: {
-    position: ["relative", "absolute", "fixed", "sticky"],
+    position: ["static", "relative", "absolute", "fixed", "sticky"],
     display: ["none", "flex", "block", "inline"],
     flexDirection: ["row", "column"],
     justifyContent: [
@@ -23,7 +20,7 @@ const responsiveProperties = defineProperties({
       "space-between",
     ],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
-    borderRadius: space,
+    borderRadius: borderRadius,
     paddingTop: space,
     paddingBottom: space,
     paddingLeft: space,
@@ -36,7 +33,16 @@ const responsiveProperties = defineProperties({
     flexWrap: ["nowrap", "wrap"],
     fontSize: fontSize,
     fontWeight: fontWeight,
-    // etc.
+    width: space,
+    height: space,
+    maxWidth: {
+      full: "1040px",
+    },
+    border: {
+      none: "none",
+      solid: "1px solid",
+    },
+    borderColor: colors,
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
